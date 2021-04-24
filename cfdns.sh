@@ -5,28 +5,14 @@
 ##     cfdns v1.0.68 - Created 02/21/21
 ##      by Lazo Consumer Products, LLC.
 ##
-##  USAGE:
-##    Use in etc/cron.daily to run script in background schedule
-##    Creat a file (cfdns.sh) with the following contents: 
-##
-##        #!/bin/bash
-##
-##        # Run cfdns daily
-##        /root/apps/cfdns/cfdns.sh
-##
-##    OR
-##
-##        # Within the cron script, run every 2 hours
-##        0 */2 * * * /root/apps/cfdns/cfdns.sh
-##
 #####################################################################
 
 ## CLOUDFLARE API SETTINGS
-zone_name="domain.com"
-record_name="sub.domain.com" 	# the record_name is the complete address, including subdomain
-zone_id="YOUR-CF-ZONE-ID" 		# every zone (domain) has an id in cloudflare
-record_id="YOUR-CF-RECORD-ID" 	# likewise, every subdomain has a zone record id (e.g. subdomain)
-auth_key="YOUR-CF-TOKEN-KEY" 	# the cloudflare bearer token key, aka the API key
+zone_name="domain.com"        # thezone_name is your domain name
+record_name="sub.domain.com"  # the record_name is the complete address, including subdomain
+zone_id="YOUR-CF-ZONE-ID"     # every zone (domain) has an id in cloudflare
+record_id="YOUR-CF-RECORD-ID" # likewise, every subdomain has a zone record id (e.g. subdomain)
+auth_key="YOUR-CF-TOKEN-KEY"  # the cloudflare bearer token key, aka the API key
 
 ## FILE SETTINGS
 DIR="/home/apps/cfdns" ## Location of main script file (cfdns.sh)
