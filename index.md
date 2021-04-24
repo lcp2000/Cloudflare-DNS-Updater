@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# Cloudflare DNS Updater
+### Dynamically Update IP on Cloudflare DNS
 
-You can use the [editor on GitHub](https://github.com/lcp2000/cfdns/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+_cfdns v1.0.68 - Created 02/21/21_
+_by Lazo Consumer Products, LLC._
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi at home.
 
-### Markdown
+  ## SETUP:
+   **PART I**<br>
+     Create a directory to house the cfdns script. Your home directory should be a good place, i.e. /home/apps/cfdns.
+   
+      Make directory structure
+      /#: mkdir -pv /home/apps/cfdns
+      
+      cd into the cfdns directory.
+      /#: cd /home/apps/cfdns
+      
+      create the cfdns.sh file using nano or vim and copy the contents of the script into it.
+      /#: nano cfdns.sh
+      
+      right click to paste (on DietPi)
+      
+      CTRL X to exit, Y to save, ENTER to write file
+      
+      
+  Be sure to change the Cloudflare API settings:
+  
+      ## CLOUDFLARE API SETTINGS
+      zone_name="domain.com"        # thezone_name is your domain name
+      record_name="sub.domain.com"  # the record_name is the complete address, including subdomain
+      zone_id="YOUR-CF-ZONE-ID"     # every zone (domain) has an id in cloudflare
+      record_id="YOUR-CF-RECORD-ID" # likewise, every subdomain has a zone record id (e.g. subdomain)
+      auth_key="YOUR-CF-TOKEN-KEY"  # the cloudflare bearer token key, aka the API key
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+      
+   **PART II**<br>
+   Create a file **_"cfdns"_** in **_"/etc/cron.daily/"_** to run script in background.
+   
+   Add the following contents to the file: 
 
-```markdown
-Syntax highlighted code block
+        #!/bin/bash
 
-# Header 1
-## Header 2
-### Header 3
+        # Run the cfdns.sh script daily
+        /home/apps/cfdns/cfdns.sh
 
-- Bulleted
-- List
+  **OR**
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lcp2000/cfdns/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+        # Within your cron script, add this to run every 2 hours:
+        0 */2 * * * /home/apps/cfdns/cfdns.sh
