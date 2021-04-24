@@ -8,9 +8,10 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
 
   ## SETUP:
    **PART I**
+     Create a directory to house the cfdns script. Your home directory should be a good place, i.e. /home/apps/cfdns.
    
-      Create a directory to house the cfdns script. Your home directory should be a good place, i.e. /home/apps/cfdns.
-      /#: mkdir -p /home/apps/cfdns
+      Make directory structure
+      /#: mkdir -pv /home/apps/cfdns
       
       cd into the cfdns directory.
       /#: cd /home/apps/cfdns
@@ -34,9 +35,9 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
 
       
    **PART II**
+   Creat a file **_"cfdns"_** in **_"/etc/cron.daily/"_** to run script in background.
    
-      Creat a file "cfdns" in "/etc/cron.daily/" to run script in background.
-      Add the following contents to the file: 
+   Add the following contents to the file: 
 
         #!/bin/bash
 
