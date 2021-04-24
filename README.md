@@ -4,7 +4,7 @@
 _cfdns v1.0.68 - Created 02/21/21_
 _by Lazo Consumer Products, LLC._
 
-Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi, at home.
+Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi at home.
 
   ## SETUP:
    **PART I**<br>
@@ -35,7 +35,7 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
 
       
    **PART II**<br>
-   Creat a file **_"cfdns"_** in **_"/etc/cron.daily/"_** to run script in background.
+   Create a file **_"cfdns"_** in **_"/etc/cron.daily/"_** to run script in background.
    
    Add the following contents to the file: 
 
