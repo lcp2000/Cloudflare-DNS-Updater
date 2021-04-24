@@ -33,6 +33,8 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
       zone_id="YOUR-CF-ZONE-ID"     # every zone (domain) has an id in cloudflare
       record_id="YOUR-CF-RECORD-ID" # likewise, every subdomain has a zone record id (e.g. subdomain)
       auth_key="YOUR-CF-TOKEN-KEY"  # the cloudflare bearer token key, aka the API key
+      
+  <p>You can find the full code on GitHub <a href="https://github.com/lcp2000/Cloudflare-DNS-Updater/blob/main/cfdns.sh" target="_blank">HERE</a><p>
 
       
    **PART II**<br>
