@@ -16,7 +16,7 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
       cd into the cfdns directory.
       /#: cd /home/apps/cfdns
       
-      create the cfdns.sh file using nano or vim, and copy the contents of the script into it.
+      create the cfdns.sh file using nano or vim and copy the contents of the script into it.
       /#: nano cfdns.sh
       
       right click to paste (on DietPi)
@@ -46,5 +46,5 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
 
   **OR**
 
-        # Within the your cron script, add this to run every 2 hours
+        # Within your cron script, add this to run every 2 hours:
         0 */2 * * * /home/apps/cfdns/cfdns.sh
