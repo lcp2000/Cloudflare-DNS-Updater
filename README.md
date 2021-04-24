@@ -18,7 +18,13 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
       create the cfdns.sh file using nano or vim, and copy the contents of the script into it.
       /#: nano cfdns.sh
       
-      Be sure to change the Cloudflare API settings:
+      right click to paste (on DietPi)
+      
+      CTRL X to exit, Y to save, ENTER to write file
+      
+      
+  Be sure to change the Cloudflare API settings:
+  
       ## CLOUDFLARE API SETTINGS
       zone_name="domain.com"			  # thezone_name is your domain name
       record_name="sub.domain.com" 	# the record_name is the complete address, including subdomain
