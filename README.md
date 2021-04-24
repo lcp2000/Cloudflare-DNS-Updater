@@ -6,8 +6,7 @@ _by Lazo Consumer Products, LLC._
 
 Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi, at home.
 
-  ##**SETUP:**##
-      
+  ## SETUP:
    **PART I**
    
       Create a directory to house the cfdns script. Your home directory should be a good place, i.e. /home/apps/cfdns.
@@ -21,16 +20,16 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
       
       Be sure to change the Cloudflare API settings:
       ## CLOUDFLARE API SETTINGS
-      zone_name="domain.com"			# thezone_name is your domain name
+      zone_name="domain.com"			  # thezone_name is your domain name
       record_name="sub.domain.com" 	# the record_name is the complete address, including subdomain
       zone_id="YOUR-CF-ZONE-ID" 		# every zone (domain) has an id in cloudflare
-      record_id="YOUR-CF-RECORD-ID" 	# likewise, every subdomain has a zone record id (e.g. subdomain)
+      record_id="YOUR-CF-RECORD-ID" # likewise, every subdomain has a zone record id (e.g. subdomain)
       auth_key="YOUR-CF-TOKEN-KEY" 	# the cloudflare bearer token key, aka the API key
 
       
    **PART II**
    
-      Creat a file _**cfdns**_ in _**/etc/cron.daily/**_ to run script in background.
+      Creat a file "cfdns" in "/etc/cron.daily/" to run script in background.
       Add the following contents to the file: 
 
         #!/bin/bash
@@ -40,5 +39,5 @@ Dynamically updates your computer's IP address to your Cloudflare DNS account so
 
   **OR**
 
-        # Within the cron script, run every 2 hours
+        # Within the your cron script, add this to run every 2 hours
         0 */2 * * * /home/apps/cfdns/cfdns.sh
