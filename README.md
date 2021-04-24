@@ -7,15 +7,15 @@ by Lazo Consumer Products, LLC.
 Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi, at home.
 
   USAGE:
-    Use in /etc/cron.daily to run script in background schedule.
-    Creat a file (cfdns.sh) with the following contents: 
+    Creat a file _**cfdns.sh**_ in _**/etc/cron.daily/**_ to run script in background.
+    Add the following contents to the file: 
 
         #!/bin/bash
 
         # Run cfdns daily
-        /root/apps/cfdns/cfdns.sh
+        /home/apps/cfdns/cfdns.sh
 
     OR
 
         # Within the cron script, run every 2 hours
-        0 */2 * * * /root/apps/cfdns/cfdns.sh
+        0 */2 * * * /home/apps/cfdns/cfdns.sh
