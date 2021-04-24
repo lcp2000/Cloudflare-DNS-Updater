@@ -6,7 +6,8 @@ _by Lazo Consumer Products, LLC._
 
 Dynamically updates your computer's IP address to your Cloudflare DNS account so that you don't have to worry about updating IP's every time your home ISP's DHCP changes it. Great for running your own website on a Raspberry Pi at home.
 
-## SETUP:<br>
+## SETUP:
+
    **PART I**<br>
      Create a directory to house the cfdns script. Your home directory should be a good place, i.e. /home/apps/cfdns.
    
