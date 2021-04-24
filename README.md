@@ -1,5 +1,5 @@
 # Cloudflare DNS Updater
-## Dynamically Update IP on Cloudflare DNS
+### Dynamically Update IP on Cloudflare DNS
 
 _cfdns v1.0.68 - Created 02/21/21_
 _by Lazo Consumer Products, LLC._
